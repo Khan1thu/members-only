@@ -1,1 +1,11 @@
+<% if user_signed_in? %>
+<%= current_user.id %>
+<p> Congraulation! Your signed in </p>
 <h1>Hello World</h1>
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete%>
+
+<%else%>
+<p> You need to sign in see post!! <p>
+<%= link_to 'Sign In', new_user_session_path, method: :get%>
+
+<%end%>
